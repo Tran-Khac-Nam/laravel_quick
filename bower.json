@@ -1,0 +1,22 @@
+{
+  "name": "quicktask",
+  "description": "",
+  "main": "",
+  "authors": [
+    "tran khac nam <nam3061998@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Tran-Khac-Nam/laravel_quicktask",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "google-material-icons": "^2.2.1",
+    "jquery": "^3.5.1"
+  }
+}
