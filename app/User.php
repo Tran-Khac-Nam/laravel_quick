@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'address', 'phone',
     ];
 
     /**
@@ -24,16 +24,17 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
 
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
+    protected $dates = ['deleted_at'];
+    public function order()
+    {
+       return $this->hasMany('App\Order', 'user_id', 'id');
+    }
+
 }
