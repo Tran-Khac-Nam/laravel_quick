@@ -57,7 +57,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="{{ trans('language.cancel') }}">
-                            <input type="submit" class="btn btn-danger" value="{{ trans('language.delete') }}">
+                            <input type="submit" class="btn btn-danger" value="delete">
                         </div>
                     </form>
                 </div>

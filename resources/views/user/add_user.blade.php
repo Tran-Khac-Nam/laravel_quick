@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="user"><input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"></a>
+                <a href="user"><input type="button" class="btn btn-default" data-dismiss="modal" value="{{ trans('language.cancel') }}"></a>
                 <input type="submit" class="btn btn-success" value="{{ trans('language.add') }}">
             </div>
         </form>
