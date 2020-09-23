@@ -3,7 +3,7 @@
 <div class="modal-dialog">
     <div class="modal-content">
         <form action="{{ route('users.update', $user->id) }}" method="POST">
-            @method('PUT');
+            @method('PUT')
             @csrf
             <div class="modal-header">
                 <h4 class="modal-title">{{ trans('language.edit') }} {{ trans('language.user') }}</h4>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="user"><input type="button" class="btn btn-default" data-dismiss="modal" value="{{ trans('language.cancel') }}"></a>
+                <a href="{{ route('users.index') }}"><input type="button" class="btn btn-default" data-dismiss="modal" value="{{ trans('language.cancel') }}"></a>
                 <input type="submit" class="btn btn-info" value="{{ trans('language.save') }}">
             </div>
         </form>

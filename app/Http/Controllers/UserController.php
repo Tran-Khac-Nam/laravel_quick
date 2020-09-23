@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreateUserRequest;
 use App\User;
 use Config;
+
 class UserController extends Controller
 {
     /**
