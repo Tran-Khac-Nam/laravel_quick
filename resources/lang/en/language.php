@@ -7,7 +7,6 @@ return [
     'delete_user' => 'Delete User',
     'delete_user_mess1' => 'Are you sure you want to delete these Records?',
     'delete_user_mess2' => 'This action cannot be undone.',
-    'add_new_user' => 'Add New User',
     'add' => 'Add',
     'name' => 'Name',
     'email' => 'Email',
@@ -20,6 +19,8 @@ return [
     'entries' => 'entries',
     'message_add_user' => 'user added successfully',
     'message_edit_user' => 'user fixed successfully',
+    'message_delete_user' => 'user deleted successfully',
     'actions' => 'Actions',
     'cancel' => 'Cancel',
+    'user_not_available' => 'User not available',
 ];

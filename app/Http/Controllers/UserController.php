@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\createUserRequest;
+use App\Http\Requests\CreateUserRequest;
 use App\User;
+use Config;
 class UserController extends Controller
 {
     /**
@@ -14,9 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('created_at', 'DESC')->paginate(config('paginate'));
+        $users = User::orderBy('created_at', 'DESC')->paginate(config('app.paginate'));
+        $user_all = count(User::all());
 
-        return view('user.list_user', compact('users'));
+        return view('user.list_user', compact('users', 'user_all'));
     }
 
     /**
@@ -40,7 +42,7 @@ class UserController extends Controller
     {
         $user = User::create($request->all());
 
-        return view('user.list_user')->with('message', trans('language.message_add_user'));
+        return redirect('users')->with('message', trans('language.message_add_user'));
     }
 
     /**
@@ -74,12 +76,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateUserRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $user = User::update($request->all());
+        foreach ($request->all() as $key => $value) {
+            if ($value != null) {
+                $user->fill([$key => $request->input($key)]);
+            }
+        }
+        $user->save();
 
-        return view('user.list_user')->with('message', trans('language.message_edit_user'));
+        return redirect('users')->with('message', trans('language.message_edit_user'));
     }
 
     /**
@@ -90,6 +97,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id)->delete();
+
+        return redirect('users')->with('message', trans('language.message_delete_user'));;
     }
 }

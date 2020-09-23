@@ -32,9 +32,10 @@ class User extends Authenticatable
      */
 
     protected $dates = ['deleted_at'];
+
     public function order()
     {
-       return $this->hasMany('App\Order', 'user_id', 'id');
+       return $this->hasMany(Order::class, 'user_id', 'id');
     }
 
 }

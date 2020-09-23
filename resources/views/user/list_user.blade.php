@@ -1,5 +1,6 @@
 @extends('layout.index')
 @section('content')
+@if ($user_all != 0)
 <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -30,16 +31,44 @@
             <td>{{ $user->address }}</td>
             <td>{{ $user->phone }}</td>
             <td>
-                <a href="users/{{ $user->id }}/edit" class="edit" ><i class="material-icons" title="Edit">&#xE254;</i></a>
+                <a href="users/{{ $user->id }}/edit" class="edit"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
+<div id="deleteEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                @method('DELETE');
+                @csrf
+                <div class="modal-header">
+                    <h4 class="modal-title">{{ trans('language.delete_user') }}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ trans('language.delete_user_mess1') }}</p>
+                    <p class="text-warning"><small>{{ trans('language.delete_user_mess2') }}</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="{{ trans('language.cancel') }}">
+                    <input type="submit" class="btn btn-danger" value="{{ trans('language.delete') }}">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <div class="clearfix">
-    <div class="hint-text">{{ trans('language.showing') }} <b>5</b> {{ trans('language.out_of') }} <b>25</b> {{ trans('language.entries') }}</div>
+    <div class="hint-text">{{ trans('language.showing') }} <b>{{ count($users) }}</b> {{ trans('language.out_of') }} <b>{{ $user_all }}</b> {{ trans('language.entries') }}</div>
     <ul class="pagination">
         {{ $users->links() }}
     </ul>
 </div>
+@else
+<div class="alert alert-danger">
+    <strong>{{ trans('language.user_not_available') }}</strong>
+</div>
+@endif
 @endsection

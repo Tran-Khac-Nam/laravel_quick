@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -133,6 +133,8 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+
+    'paginate' => 2,
 
     'providers' => [
 

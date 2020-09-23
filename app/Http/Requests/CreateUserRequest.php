@@ -28,7 +28,6 @@ class CreateUserRequest extends FormRequest
             'email' => 'bail|required|email|unique:users',
             'address' => 'bail|required|min:8',
             'phone' => 'bail|required|numeric',
-            'name'=> 'required',
         ];
     }
 }
