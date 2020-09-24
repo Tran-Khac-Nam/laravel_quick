@@ -7,6 +7,7 @@ return [
     'delete_user' => 'Delete User',
     'delete_user_mess1' => 'Are you sure you want to delete these Records?',
     'delete_user_mess2' => 'This action cannot be undone.',
+    'add_new_user' => 'Add New User',
     'add' => 'Add',
     'name' => 'Name',
     'email' => 'Email',

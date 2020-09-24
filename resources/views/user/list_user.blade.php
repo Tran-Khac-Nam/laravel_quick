@@ -64,8 +64,6 @@
 @endforeach
 <div class="clearfix">
     <div class="hint-text">{{ trans('language.showing') }} <b>{{ count($users) }}</b> {{ trans('language.out_of') }} <b>{{ $numberUsers }}</b> {{ trans('language.entries') }}</div>
-<div class="clearfix">
-    <div class="hint-text">{{ trans('language.showing') }} <b></b> {{ trans('language.out_of') }} <b></b> {{ trans('language.entries') }}</div>
     <ul class="pagination">
         {{ $users->links() }}
     </ul>
