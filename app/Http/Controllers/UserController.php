@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UserRequest;
 use App\User;
+use Config;
+
 class UserController extends Controller
 {
     /**
@@ -14,9 +16,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('created_at', 'DESC')->paginate(config('paginate'));
+        $users = User::orderBy('created_at', 'DESC')->paginate(config('app.paginate'));
+        $numberUsers = count(User::all());
 
-        return view('user.list_user', compact('users'));
+        return view('user.list_user', compact('users', 'numberUsers'));
     }
 
     /**
@@ -36,11 +39,11 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateUserRequest $request)
+    public function store(UserRequest $request)
     {
         $user = User::create($request->all());
 
-        return view('user.list_user')->with('message', trans('language.message_add_user'));
+        return redirect('users')->with('message', trans('language.message_add_user'));
     }
 
     /**
@@ -62,7 +65,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-            //
+        $user = User::findOrFail($id);
+
+        return view('user.edit_user', compact('user'));
     }
 
     /**
@@ -72,12 +77,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateUserRequest $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        $user = User::findOrFail($id);
-        $user = User::update($request->all());
+        $user = User::findOrFail($id)->update($request->all());
 
-        return view('user.list_user')->with('message', trans('language.message_edit_user'));
+        return redirect('users')->with('message', trans('language.message_edit_user'));
     }
 
     /**
@@ -88,6 +92,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id)->delete();
+
+        return redirect('users')->with('message', trans('language.message_delete_user'));
     }
 }
