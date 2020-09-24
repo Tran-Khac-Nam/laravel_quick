@@ -12,5 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'UserController@index');
 
 Route::resource('users', 'UserController');
+
+Route::resource('orders', 'OrderController');
+
+Route::get('orders_user/{id}', 'OrderController@getOrdersById')->name('ordersById');
