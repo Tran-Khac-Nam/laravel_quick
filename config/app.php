@@ -134,6 +134,8 @@ return [
     |
     */
 
+    'paginate' => 2,
+
     'providers' => [
 
         /*

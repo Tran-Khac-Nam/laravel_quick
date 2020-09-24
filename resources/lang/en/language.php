@@ -20,6 +20,8 @@ return [
     'entries' => 'entries',
     'message_add_user' => 'user added successfully',
     'message_edit_user' => 'user fixed successfully',
+    'message_delete_user' => 'user deleted successfully',
     'actions' => 'Actions',
     'cancel' => 'Cancel',
+    'user_not_available' => 'User not available',
 ];

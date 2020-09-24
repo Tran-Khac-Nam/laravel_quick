@@ -30,35 +30,14 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h2>{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></h2>
+                                <a href="users" ><h2>{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></h2></a>
                             </div>
                             <div class="col-sm-6">
                                 <a href="{{ route('users.create') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>{{ trans('language.add_new_user') }}</span></a>
-                                <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span> {{ trans('language.delete') }}</span></a>
                             </div>
                         </div>
                     </div>
                     @yield('content')
-                </div>
-            </div>
-        </div>
-        <div id="deleteEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <h4 class="modal-title">{{ trans('language.delete_user') }}</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>{{ trans('language.delete_user_mess1') }}</p>
-                            <p class="text-warning"><small>{{ trans('language.delete_user_mess2') }}</small></p>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="{{ trans('language.cancel') }}">
-                            <input type="submit" class="btn btn-danger" value="delete">
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
