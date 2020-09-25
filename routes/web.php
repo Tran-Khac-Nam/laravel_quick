@@ -12,10 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'UserController@index');
+Route::group(['middleware' => 'language'], function() {
+    Route::get('language/{language}', 'LangController@changeLanguage')->name('changelanguage');
 
-Route::resource('users', 'UserController');
+    Route::get('/', 'UserController@index');
 
-Route::resource('orders', 'OrderController');
+    Route::resource('users', 'UserController');
 
-Route::get('orders_user/{id}', 'OrderController@getOrdersById')->name('ordersById');
+    Route::resource('orders', 'OrderController');
+
+    Route::get('orders_user/{id}', 'OrderController@getOrdersById')->name('ordersById');
+});

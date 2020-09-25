@@ -25,6 +25,8 @@
                     <strong>{{ session('message') }}</strong>
                 </div>
             @endif
+            <a href="{!! route('changelanguage', ['en']) !!}">English</a>
+            <a href="{!! route('changelanguage', ['vi']) !!}">Vietnam</a>
             @yield('content')
         </div>
     </body>
