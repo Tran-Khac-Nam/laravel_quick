@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'UserController@index');
 
 Route::resource('users', 'UserController');
+
+Route::resource('orders', 'OrderController');
+
+Route::get('orders-user/{id}', 'OrderController@getOrdersById')->name('orders_by_id');

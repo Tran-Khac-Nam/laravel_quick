@@ -25,21 +25,7 @@
                     <strong>{{ session('message') }}</strong>
                 </div>
             @endif
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <a href="users" ><h2>{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></h2></a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="{{ route('users.create') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>{{ trans('language.add_new_user') }}</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    @yield('content')
-                </div>
-            </div>
+            @yield('content')
         </div>
     </body>
 </html>
