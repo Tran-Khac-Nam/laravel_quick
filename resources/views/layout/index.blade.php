@@ -25,6 +25,12 @@
                     <strong>{{ session('message') }}</strong>
                 </div>
             @endif
+            <a href="{!! route('changelanguage', ['en']) !!}" @if (Session::get('language', config('app.locale')) == 'en')
+                class="mactive"
+            @endif>English</a>
+            <a href="{!! route('changelanguage', ['vi']) !!}" @if (Session::get('language', config('app.locale')) == 'vi')
+                class="mactive"
+            @endif>Vietnam</a>
             @yield('content')
         </div>
     </body>

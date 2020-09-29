@@ -5,9 +5,9 @@
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-6">
-                    <a href="{{ route('orders.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></a>
+                    <a href="{{ route('users.index') }}" class="mactive">{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></a>
                     {{ trans('language.or') }}
-                    <a href="{{ route('users.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.order') }} </b></a>
+                    <a href="{{ route('orders.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.order') }} </b></a>
                 </div>
                 <div class="col-sm-6">
                     <a href="{{ route('users.create') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>{{ trans('language.add_new_user') }}</span></a>
@@ -47,7 +47,7 @@
                             <td>
                                 <a href="{{ route('users.edit', $user->id) }}" class="edit" ><i class="material-icons" title="Edit">&#xE254;</i></a>
                                 <a href="#deleteEmployeeModal{{ $user->id }}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                <a href="{{ route('orders_by_id', $user->id) }}" >View order</a>
+                                <a href="{{ route('ordersById', $user->id) }}" >{{ trans('language.view_order') }}</a>
                             </td>
                         </tr>
                     @endforeach

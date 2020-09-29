@@ -225,3 +225,6 @@ table.table .avatar {
 .manage {
     color: white;
 }
+.mactive {
+    font-size: 25px;
+}

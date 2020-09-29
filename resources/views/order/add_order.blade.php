@@ -5,7 +5,7 @@
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-6">
-                    <a href="{{ route('orders.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.order') }} </b></a>
+                    <a href="{{ route('orders.index') }}" class="mactive">{{ trans('language.manage') }} <b>{{ trans('language.order') }} </b></a>
                     {{ trans('language.or') }}
                     <a href="{{ route('users.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></a>
                 </div>
@@ -18,7 +18,7 @@
             <div class="modal-content">
                 <form action="{{ route('orders.store') }}" method="POST">
                     <div class="modal-header">
-                        <h4 class="modal-title">{{ trans('language.add_new_user') }}</h4>
+                        <h4 class="modal-title">{{ trans('language.add_new_order') }}</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
