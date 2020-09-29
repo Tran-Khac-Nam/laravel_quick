@@ -5,9 +5,9 @@
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-6">
-                    <a href="{{ route('orders.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></a>
+                    <a href="{{ route('users.index') }}" class="mactive">{{ trans('language.manage') }} <b>{{ trans('language.user') }} </b></a>
                     {{ trans('language.or') }}
-                    <a href="{{ route('users.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.order') }} </b></a>
+                    <a href="{{ route('orders.index') }}" class="manage">{{ trans('language.manage') }} <b>{{ trans('language.order') }} </b></a>
                 </div>
                 <div class="col-sm-6">
                     <a href="{{ route('orders.create') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>{{ trans('language.add_new_order') }}</span></a>

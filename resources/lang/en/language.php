@@ -38,5 +38,6 @@ return [
     'select_user_email' => 'Select user email',
     'add_new_order' => 'Add New Order',
     'or' => 'or',
-    'list_order_of_user_email' => 'List order of user email: '
+    'list_order_of_user_email' => 'List order of user email: ',
+    'view_order' => 'view order',
 ];
