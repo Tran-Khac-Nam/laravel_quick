@@ -26,8 +26,8 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required|min:6|max:30',
             'email' => 'bail|required|email|unique:users',
-            'address' => 'bail|required|min:8',
-            'phone' => 'bail|required|numeric',
+            'address' => 'bail|required|min:8|max:50',
+            'phone' => 'bail|required|numeric|max:15',
         ];
     }
 }
